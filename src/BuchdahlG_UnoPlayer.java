@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class BuchdahlG_UnoPlayer implements UnoPlayer {
@@ -34,8 +35,51 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      */
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
-        // THIS IS WHERE YOUR AMAZING CODE GOES
-        return -1;
+        if (canPlayValidNumberCard(hand, upCard, calledColor)){
+            return (playValidNumberCard(hand, upCard, calledColor));
+        }
+        else {
+            return -1;
+        }
+    }
+
+    public boolean canPlayValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
+        for(Card card: hand){
+            if (card.getNumber()<20) {
+                if (card.getRank().equals(upCard.getRank())) {
+                    return true;
+                }
+                if (card.getColor().equals(calledColor) || card.getColor().equals(upCard.getColor())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public int playValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
+        int index = -1;
+        int max = 1000;
+        for(int i = 0; i<hand.size(); i++){
+            Card card = hand.get(i);
+            if (card.getNumber()<20) {
+                if (card.getRank().equals(upCard.getRank())) {
+                    index = i;
+                    max = card.getNumber();
+                }
+            }
+        }
+        for(int i = 0; i<hand.size(); i++){
+            Card card = hand.get(i);
+            if (card.getNumber()<20) {
+                if (card.getColor().equals(calledColor) || card.getColor().equals(upCard.getColor())) {
+                    if (card.getNumber() > max) {
+                        index = i;
+                        max = card.getNumber();
+                    }
+                }
+            }
+        }
+        return index;
     }
 
     /**
