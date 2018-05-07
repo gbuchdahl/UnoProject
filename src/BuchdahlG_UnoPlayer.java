@@ -12,7 +12,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      * or "Color.NONE" if the card is a wild card. The rank will be
      * "Rank.NUMBER" for all numbered cards, and another value (e.g.,
      * "Rank.SKIP," "Rank.REVERSE," etc.) for special cards. The value of
-     * a card's "number" only has meaning if it is a number card. 
+     * a card's "number" only has meaning if it is a number card.
      * (Otherwise, it will be -1.)
      *
      * The upCard parameter works the same way, and tells you what the 
@@ -35,7 +35,8 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      */
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
-        if (canPlayValidNumberCard(hand, upCard, calledColor)){
+        if (handContainsValidNumberCard(hand, upCard, calledColor)){
+//            System.out.println("called play method");
             return (playValidNumberCard(hand, upCard, calledColor));
         }
         else {
@@ -43,44 +44,42 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         }
     }
 
-    public boolean canPlayValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
-        for(Card card: hand){
-            if (card.getNumber()<20) {
-                if (card.getRank().equals(upCard.getRank())) {
-                    return true;
-                }
-                if (card.getColor().equals(calledColor) || card.getColor().equals(upCard.getColor())) {
-                    return true;
-                }
+    private boolean canPlayNumberCard(Card card, Card upCard, Color calledColor) {
+        return (card.getColor().equals(upCard.getColor()) || card.getNumber() == upCard.getNumber());
+    }
+
+    private boolean handContainsValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
+        for(Card card: getNumberCards(hand)) {
+            if (canPlayNumberCard(card, upCard, calledColor)) {
+                return true;
             }
         }
         return false;
     }
-    public int playValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
-        int index = -1;
-        int max = 1000;
-        for(int i = 0; i<hand.size(); i++){
-            Card card = hand.get(i);
-            if (card.getNumber()<20) {
-                if (card.getRank().equals(upCard.getRank())) {
-                    index = i;
-                    max = card.getNumber();
-                }
+
+    private int playValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
+        ArrayList<Card> cards = getNumberCards(hand);
+        int maxNo = 20;
+        Card result = null;
+
+        for(Card card: cards){
+            if (canPlayNumberCard(card, upCard, calledColor) && card.getNumber() < maxNo){
+                result = card;
+                maxNo = card.getNumber();
             }
         }
-        for(int i = 0; i<hand.size(); i++){
-            Card card = hand.get(i);
-            if (card.getNumber()<20) {
-                if (card.getColor().equals(calledColor) || card.getColor().equals(upCard.getColor())) {
-                    if (card.getNumber() > max) {
-                        index = i;
-                        max = card.getNumber();
-                    }
-                }
-            }
-        }
-        return index;
+
+        return hand.indexOf(result);
     }
+
+    private ArrayList<Card> getNumberCards(List<Card> cards){
+        ArrayList<Card> result = new ArrayList<Card>();
+        for (Card card : cards){
+            if (card.getNumber()<20){result.add(card);}
+        }
+        return result;
+    }
+
 
     /**
      * callColor - This method will be called when you have just played a
