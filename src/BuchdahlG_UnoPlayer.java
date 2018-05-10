@@ -36,7 +36,6 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
         if (handContainsValidNumberCard(hand, upCard, calledColor)){
-//            System.out.println("called play method");
             return (playValidNumberCard(hand, upCard, calledColor));
         }
         else {
@@ -44,13 +43,22 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         }
     }
 
-    private boolean canPlayNumberCard(Card card, Card upCard, Color calledColor) {
-        return (card.getColor().equals(upCard.getColor()) || card.getNumber() == upCard.getNumber());
+    private Color neededColor(Card upCard, Color calledColor){
+      if (upCard.getRank().equals(Rank.WILD) || upCard.getRank().equals(Rank.WILD_D4)) {
+          return calledColor;
+      }else{
+          return upCard.getColor();
+      }
+    }
+
+    private boolean canPlay(Card card, Card upCard, Color calledColor) {
+        return (card.getColor().equals(neededColor(upCard, calledColor)) || card.getNumber() == upCard.getNumber())
+                || (!card.getRank().equals(Rank.NUMBER) && card.getRank().equals(upCard.getRank()));
     }
 
     private boolean handContainsValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
         for(Card card: getNumberCards(hand)) {
-            if (canPlayNumberCard(card, upCard, calledColor)) {
+            if (canPlay(card, upCard, calledColor)) {
                 return true;
             }
         }
@@ -61,14 +69,12 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         ArrayList<Card> cards = getNumberCards(hand);
         int maxNo = 20;
         Card result = null;
-
         for(Card card: cards){
-            if (canPlayNumberCard(card, upCard, calledColor) && card.getNumber() < maxNo){
+            if (canPlay(card, upCard, calledColor) && card.getNumber() < maxNo){
                 result = card;
                 maxNo = card.getNumber();
             }
         }
-
         return hand.indexOf(result);
     }
 
@@ -80,10 +86,9 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         return result;
     }
 
-
     /**
      * callColor - This method will be called when you have just played a
-     * wild card, and is your way of specifying which color you want to 
+     * wild card, and is your way of specifying which color you want to
      * change it to.
      *
      * You must return a valid Color value from this method. You must not
@@ -92,6 +97,6 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     public Color callColor(List<Card> hand)
     {
         // THIS IS WHERE YOUR AMAZING CODE GOES
-        return null;
+        return Color.RED;
     }
 }

@@ -3,9 +3,9 @@ import java.util.*;
 
 public class TestCaseProcessor
 {
-    public static String player = "Dumb";
+    public static String player = "BuchdahlG";
     public String classname = player + "_UnoPlayer";
-    public String filename = "testCases.txt";
+    public String filename = "src/testCases.txt";
 
     private UnoPlayer thePlayer;
 
