@@ -35,10 +35,38 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      */
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
+
+        int[] handSizes = state.getNumCardsInHandsOfUpcomingPlayers();
+        int smallestHand = handSizes[0];
+        for (int i = 1; i< handSizes.length-1; i++){
+            if (handSizes[i] < smallestHand){
+                smallestHand = handSizes[i];
+            }
+        }
+        int myHand = handSizes[3]
+
+
+        // Dump high points if losing bad
+        if (smallestHand <= 2 && myHand > 4){
+            if (this.playWildIfPossible(hand) != -1) {
+                return this.playWildIfPossible(hand);
+            }
+
+        }
+
+
+
+
+
+
+
         if (handContainsValidNumberCard(hand, upCard, calledColor)){
             return (playValidNumberCard(hand, upCard, calledColor));
         }
         else {
+            if (this.playWildIfPossible(hand) != -1) {
+                return this.playWildIfPossible(hand);
+            }
             return -1;
         }
     }
@@ -76,6 +104,18 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             }
         }
         return hand.indexOf(result);
+    }
+
+    private int playWildIfPossible(List<Card> hand){
+        int result = -1;
+        for (Card card : hand){
+            if (card.getRank().equals(Rank.WILD_D4)) { result = hand.indexOf(card);}
+        }
+        if (result != -1) {return result;}
+        for (Card card : hand){
+            if (card.getRank().equals(Rank.WILD)) { result = hand.indexOf(card);}
+        }
+        return result;
     }
 
     private ArrayList<Card> getNumberCards(List<Card> cards){
