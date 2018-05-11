@@ -43,7 +43,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
                 smallestHand = handSizes[i];
             }
         }
-        int myHand = handSizes[3]
+        int myHand = handSizes[3];
 
 
         // Dump high points if losing bad
@@ -51,23 +51,31 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             if (this.playWildIfPossible(hand) != -1) {
                 return this.playWildIfPossible(hand);
             }
-
         }
 
+        // if person ahead of you is winning
+        if (handSizes[0] < myHand){
+            if (this.playSkipD2IfPossible(hand, upCard, calledColor) != -1){
+                return this.playSkipD2IfPossible(hand, upCard, calledColor);
+            }
+        }
 
-
-
-
-
+        // if person ahead of you is ahead of person behind you
+        if (handSizes[0] < handSizes[2]){
+            if (this.playReverseIfPossible(hand, upCard, calledColor) != -1){
+                return this.playReverseIfPossible(hand, upCard, calledColor);
+            }
+        }
 
         if (handContainsValidNumberCard(hand, upCard, calledColor)){
             return (playValidNumberCard(hand, upCard, calledColor));
         }
         else {
-            if (this.playWildIfPossible(hand) != -1) {
-                return this.playWildIfPossible(hand);
+            if (trySpecials(hand, upCard, calledColor) != -1){
+                return trySpecials(hand, upCard, calledColor);
+            }else{
+                return -1;
             }
-            return -1;
         }
     }
 
@@ -106,14 +114,43 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         return hand.indexOf(result);
     }
 
+    private int trySpecials(List<Card> hand, Card upCard, Color calledColor){
+        if (this.playReverseIfPossible(hand, upCard, calledColor) != -1){
+            return this.playReverseIfPossible(hand, upCard, calledColor);
+        }
+        if (this.playSkipD2IfPossible(hand, upCard, calledColor) != -1){
+            return this.playSkipD2IfPossible(hand, upCard, calledColor);
+        }
+        if (this.playWildIfPossible(hand) != -1) {
+            return this.playWildIfPossible(hand);
+        }
+        return -1;
+    }
+
     private int playWildIfPossible(List<Card> hand){
         int result = -1;
         for (Card card : hand){
-            if (card.getRank().equals(Rank.WILD_D4)) { result = hand.indexOf(card);}
+            if (card.getRank().equals(Rank.WILD_D4)) {result = hand.indexOf(card);}
         }
         if (result != -1) {return result;}
         for (Card card : hand){
-            if (card.getRank().equals(Rank.WILD)) { result = hand.indexOf(card);}
+            if (card.getRank().equals(Rank.WILD)) {result = hand.indexOf(card);}
+        }
+        return result;
+    }
+
+    private int playSkipD2IfPossible(List<Card> hand, Card upCard, Color calledColor){
+        int result = -1;
+        for (Card card : hand){
+            if ((card.getRank().equals(Rank.SKIP) || card.getRank().equals(Rank.DRAW_TWO)) && canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
+        }
+        return result;
+    }
+
+    private int playReverseIfPossible(List<Card> hand, Card upCard, Color calledColor){
+        int result = -1;
+        for (Card card : hand){
+            if ((card.getRank().equals(Rank.REVERSE))&& canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
         }
         return result;
     }
