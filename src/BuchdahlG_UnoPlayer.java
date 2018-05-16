@@ -2,6 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BuchdahlG_UnoPlayer implements UnoPlayer {
+
+    UnoPlayer.Color blue = Color.BLUE;
+    UnoPlayer.Color red = Color.RED;
+    UnoPlayer.Color yellow = Color.YELLOW;
+    UnoPlayer.Color green = Color.GREEN;
+
+    UnoPlayer.Rank number = Rank.NUMBER;
+    UnoPlayer.Rank skip = Rank.SKIP;
+    UnoPlayer.Rank reverse = Rank.REVERSE;
+    UnoPlayer.Rank drawTwo = Rank.DRAW_TWO;
+    UnoPlayer.Rank wildDrawFour = Rank.WILD_D4;
+    UnoPlayer.Rank wild = Rank.WILD;
+
     /**
      * play - This method is called when it's your turn and you need to
      * choose what card to play.
@@ -79,7 +92,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     }
 
     private Color neededColor(Card upCard, Color calledColor){
-      if (upCard.getRank().equals(Rank.WILD) || upCard.getRank().equals(Rank.WILD_D4)) {
+      if (upCard.getRank().equals(wild) || upCard.getRank().equals(wildDrawFour)) {
           return calledColor;
       }else{
           return upCard.getColor();
@@ -88,8 +101,8 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
 
     private boolean canPlay(Card card, Card upCard, Color calledColor) {
         return (card.getColor().equals(neededColor(upCard, calledColor))
-                || (card.getNumber() == upCard.getNumber()) && card.getRank().equals(Rank.NUMBER))
-                || (!(card.getRank().equals(Rank.NUMBER)) && card.getRank().equals(upCard.getRank()));
+                || (card.getNumber() == upCard.getNumber()) && card.getRank().equals(number))
+                || (!(card.getRank().equals(number)) && card.getRank().equals(upCard.getRank()));
     }
 
     private boolean handContainsValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
@@ -130,11 +143,11 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     private int playWildIfPossible(List<Card> hand){
         int result = -1;
         for (Card card : hand){
-            if (card.getRank().equals(Rank.WILD_D4)) {result = hand.indexOf(card);}
+            if (card.getRank().equals(wildDrawFour)) {result = hand.indexOf(card);}
         }
         if (result != -1) {return result;}
         for (Card card : hand){
-            if (card.getRank().equals(Rank.WILD)) {result = hand.indexOf(card);}
+            if (card.getRank().equals(wild)) {result = hand.indexOf(card);}
         }
         return result;
     }
@@ -142,8 +155,8 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     private int playSkipD2IfPossible(List<Card> hand, Card upCard, Color calledColor){
         int result = -1;
         for (Card card : hand){
-            if (((card.getRank().equals(Rank.SKIP)&&upCard.getRank().equals(Rank.SKIP))
-                    || (card.getRank().equals(Rank.DRAW_TWO) && upCard.getRank().equals(Rank.DRAW_TWO)))
+            if (((card.getRank().equals(skip)&&upCard.getRank().equals(skip))
+                    || (card.getRank().equals(drawTwo) && upCard.getRank().equals(drawTwo)))
                     && canPlay(card, upCard, calledColor))
                 {result = hand.indexOf(card);}
         }
@@ -153,7 +166,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     private int playReverseIfPossible(List<Card> hand, Card upCard, Color calledColor){
         int result = -1;
         for (Card card : hand){
-            if ((card.getRank().equals(Rank.REVERSE)) && canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
+            if ((card.getRank().equals(reverse)) && canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
         }
         return result;
     }
@@ -177,6 +190,19 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     public Color callColor(List<Card> hand)
     {
         // THIS IS WHERE YOUR AMAZING CODE GOES
-        return Color.RED;
+        int greens =0;
+        int reds = 0;
+        int yellows = 0;
+        int blues = 0;
+        for (Card card: hand){
+            if (card.getColor().equals(red)) {reds += 1;}
+            if (card.getColor().equals(green)) {greens += 1;}
+            if (card.getColor().equals(blue)) {blues += 1;}
+            if (card.getColor().equals(yellow)) {yellows += 1;}
+        }
+        if (greens > reds && greens > yellows && greens > blues) {return green;}
+        else if (reds > yellows && reds > blues) { return red;}
+        else if (yellows > blues) {return yellow;}
+        else return blue;
     }
 }

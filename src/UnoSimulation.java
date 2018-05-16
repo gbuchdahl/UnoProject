@@ -15,7 +15,7 @@ public class UnoSimulation
      * Controls how many messages fly by the screen while narrating an Uno
      * match in text.
      */
-    public static boolean PRINT_VERBOSE = true;
+    public static boolean PRINT_VERBOSE = false;
 
     /**
      * <p>The name of a file (relative to working directory) containing
@@ -35,7 +35,7 @@ public class UnoSimulation
      * "fsmith_UnoPlayer") against Jane (whose classname was
      * "jdoe_Unoplayer") against, Billy,... etc.
      */
-    public static final String PLAYER_FILENAME = "players.txt";
+    public static final String PLAYER_FILENAME = "src/players.txt";
 
     /**
      * The names ("Joe") and classes ("jsmith_UnoPlayer") of competing
@@ -44,7 +44,7 @@ public class UnoSimulation
     private static ArrayList<String> playerNames = new ArrayList<String>();
     private static ArrayList<String> playerClasses = new ArrayList<String>();
 
-    public static int GAMES = 2;
+    public static int GAMES = 100;
     
     /** 
      * Run an Uno simulation of some number of games pitting some set of
