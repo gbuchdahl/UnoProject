@@ -52,7 +52,6 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
                 return this.playWildIfPossible(hand);
             }
         }
-
         // if person ahead of you is winning
         if (handSizes[0] < myHand){
             if (this.playSkipD2IfPossible(hand, upCard, calledColor) != -1){
@@ -88,8 +87,9 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     }
 
     private boolean canPlay(Card card, Card upCard, Color calledColor) {
-        return (card.getColor().equals(neededColor(upCard, calledColor)) || card.getNumber() == upCard.getNumber())
-                || (!card.getRank().equals(Rank.NUMBER) && card.getRank().equals(upCard.getRank()));
+        return (card.getColor().equals(neededColor(upCard, calledColor))
+                || (card.getNumber() == upCard.getNumber()) && card.getRank().equals(Rank.NUMBER))
+                || (!(card.getRank().equals(Rank.NUMBER)) && card.getRank().equals(upCard.getRank()));
     }
 
     private boolean handContainsValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
@@ -142,7 +142,10 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     private int playSkipD2IfPossible(List<Card> hand, Card upCard, Color calledColor){
         int result = -1;
         for (Card card : hand){
-            if ((card.getRank().equals(Rank.SKIP) || card.getRank().equals(Rank.DRAW_TWO)) && canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
+            if (((card.getRank().equals(Rank.SKIP)&&upCard.getRank().equals(Rank.SKIP))
+                    || (card.getRank().equals(Rank.DRAW_TWO) && upCard.getRank().equals(Rank.DRAW_TWO)))
+                    && canPlay(card, upCard, calledColor))
+                {result = hand.indexOf(card);}
         }
         return result;
     }
@@ -150,7 +153,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
     private int playReverseIfPossible(List<Card> hand, Card upCard, Color calledColor){
         int result = -1;
         for (Card card : hand){
-            if ((card.getRank().equals(Rank.REVERSE))&& canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
+            if ((card.getRank().equals(Rank.REVERSE)) && canPlay(card, upCard, calledColor)) {result = hand.indexOf(card);}
         }
         return result;
     }
