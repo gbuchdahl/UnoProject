@@ -24,22 +24,9 @@
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-                <element signature="e#8275#8281#0" expanded="true" />
-                <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
                 <element signature="e#9644#9645#0" expanded="true" />
                 <element signature="e#9678#9679#0" expanded="true" />
-                <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+                <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/players.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+              <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -345,7 +332,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -355,9 +341,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32799014" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32799014" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36409155" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -368,11 +354,31 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19456366" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32799014" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292232" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36409155" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -420,22 +426,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -495,22 +488,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -530,22 +510,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -581,22 +548,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -640,22 +594,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -691,22 +632,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -750,22 +678,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -817,22 +732,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
@@ -894,7 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="110" column="17" lean-forward="false" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +851,7 @@
     <entry file="file://$PROJECT_DIR$/src/players.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="12" lean-forward="false" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -962,22 +863,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#play#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#neededColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canPlay#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#canChangeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#handContainsValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#changeColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playValidNumberCard#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#trySpecials#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playWildIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playSkipD2IfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#playReverseIfPossible#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="method#getNumberCards#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
-            <element signature="e#8275#8281#0" expanded="true" />
-            <element signature="method#mostBountifulColor#0;class#BuchdahlG_UnoPlayer#0" expanded="false" />
             <element signature="e#9644#9645#0" expanded="true" />
             <element signature="e#9678#9679#0" expanded="true" />
-            <marker date="1527012295642" expanded="false" signature="109:475" ph="..." />
+            <marker date="1527012479429" expanded="false" signature="109:475" ph="..." />
           </folding>
         </state>
       </provider>
