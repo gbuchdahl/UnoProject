@@ -52,11 +52,11 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      */
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
-        mostBountifulColor = this.mostBountifulColor(hand);
-        calledColor = mostBountifulColor;
+        calledColor = this.mostBountifulColor(hand, Color.NONE);
 
         int[] handSizes = state.getNumCardsInHandsOfUpcomingPlayers();
         int smallestHand = handSizes[0];
+        int smallestHandIndex = 0;
         for (int i = 1; i< handSizes.length-1; i++){
             if (handSizes[i] < smallestHand){
                 smallestHand = handSizes[i];
@@ -64,6 +64,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         }
         int myHand = handSizes[3];
 
+        Color[] calledColors = state.getMostRecentColorCalledByUpcomingPlayers();
 
         // Dump high points if losing bad
         if (smallestHand <= 2 && myHand > 4){
@@ -79,6 +80,16 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             }
         }
 
+        if (smallestHand <= 2){
+            if(upCard.getColor().equals(calledColors[smallestHandIndex])){
+                calledColor = mostBountifulColor(hand, upCard.getColor());
+                if (canChangeColor(upCard, calledColor, hand)){
+                    return changeColor(upCard, calledColor, hand);
+                }
+            }
+        }
+
+
         // if person ahead of you is ahead of person behind you
         if (handSizes[0] < handSizes[2]){
             if (this.playReverseIfPossible(hand, upCard, calledColor) != -1){
@@ -86,7 +97,9 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             }
         }
 
-        //Last Resort - Just play a card, in priority order from specials to not specials
+        //Last Resort - Just play any card you can, in priority order
+        //Numbers are first because they are less useful
+        //Special cards are played reverse, then skip/d2, then wild
         if (handContainsValidNumberCard(hand, upCard, calledColor)){
             return (playValidNumberCard(hand, upCard, calledColor));
         }
@@ -132,6 +145,15 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             }
         }
         return false;
+    }
+
+    private int changeColor(Card upCard, Color calledColor, List<Card> hand){
+        for (Card card : getNumberCards(hand)){
+            if (!(card.getColor().equals(upCard.getColor())) && canPlay(card, upCard, calledColor)){
+                return hand.indexOf(card);
+            }
+        }
+        return playWildIfPossible(hand);
     }
 
     private int playValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
@@ -199,11 +221,16 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         return result;
     }
 
-    private Color mostBountifulColor(List<Card> hand) {
+    private Color mostBountifulColor(List<Card> hand, Color penalty) {
         int greens =0;
         int reds = 0;
         int yellows = 0;
         int blues = 0;
+
+        if (penalty.equals(red)){reds-=5;}
+        if (penalty.equals(green)){greens-=5;}
+        if (penalty.equals(blue)){blues-=5;}
+        if (penalty.equals(yellow)){yellows-=5;}
         for (Card card: hand){
             if (card.getColor().equals(red)) {reds += 1;}
             if (card.getColor().equals(green)) {greens += 1;}
