@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuchdahlGMkI_UnoPlayer implements UnoPlayer {
+public class MkI_UnoPlayer implements UnoPlayer {
 
     Color blue = Color.BLUE;
     Color red = Color.RED;

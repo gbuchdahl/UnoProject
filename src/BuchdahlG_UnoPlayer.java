@@ -3,17 +3,21 @@ import java.util.List;
 
 public class BuchdahlG_UnoPlayer implements UnoPlayer {
 
-    UnoPlayer.Color blue = Color.BLUE;
-    UnoPlayer.Color red = Color.RED;
-    UnoPlayer.Color yellow = Color.YELLOW;
-    UnoPlayer.Color green = Color.GREEN;
+    Color red = Color.RED;
+    Color blue = Color.BLUE;
+    Color yellow = Color.YELLOW;
+    Color green = Color.GREEN;
 
-    UnoPlayer.Rank number = Rank.NUMBER;
-    UnoPlayer.Rank skip = Rank.SKIP;
-    UnoPlayer.Rank reverse = Rank.REVERSE;
-    UnoPlayer.Rank drawTwo = Rank.DRAW_TWO;
-    UnoPlayer.Rank wildDrawFour = Rank.WILD_D4;
-    UnoPlayer.Rank wild = Rank.WILD;
+    Rank wild = Rank.WILD;
+    Rank wildDrawFour = Rank.WILD_D4;
+    Rank reverse = Rank.REVERSE;
+    Rank skip = Rank.SKIP;
+    Rank number = Rank.NUMBER;
+    Rank drawTwo = Rank.DRAW_TWO;
+
+    Color mostBountifulColor;
+    Color calledColor;
+
 
     /**
      * play - This method is called when it's your turn and you need to
@@ -48,6 +52,8 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
      */
     public int play(List<Card> hand, Card upCard, Color calledColor, GameState state)
     {
+        mostBountifulColor = this.mostBountifulColor(hand);
+        calledColor = mostBountifulColor;
 
         int[] handSizes = state.getNumCardsInHandsOfUpcomingPlayers();
         int smallestHand = handSizes[0];
@@ -65,8 +71,9 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
                 return this.playWildIfPossible(hand);
             }
         }
+
         // if person ahead of you is winning
-        if (handSizes[0] < myHand){
+        if (handSizes[0] < myHand || handSizes[0] <= 2){
             if (this.playSkipD2IfPossible(hand, upCard, calledColor) != -1){
                 return this.playSkipD2IfPossible(hand, upCard, calledColor);
             }
@@ -79,6 +86,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
             }
         }
 
+        //Last Resort - Just play a card, in priority order from specials to not specials
         if (handContainsValidNumberCard(hand, upCard, calledColor)){
             return (playValidNumberCard(hand, upCard, calledColor));
         }
@@ -179,17 +187,7 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         return result;
     }
 
-    /**
-     * callColor - This method will be called when you have just played a
-     * wild card, and is your way of specifying which color you want to
-     * change it to.
-     *
-     * You must return a valid Color value from this method. You must not
-     * return the value Color.NONE under any circumstances.
-     */
-    public Color callColor(List<Card> hand)
-    {
-        // THIS IS WHERE YOUR AMAZING CODE GOES
+    private Color mostBountifulColor(List<Card> hand) {
         int greens =0;
         int reds = 0;
         int yellows = 0;
@@ -205,4 +203,17 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
         else if (yellows > blues) {return yellow;}
         else return blue;
     }
+
+    /**
+     * callColor - This method will be called when you have just played a
+     * wild card, and is your way of specifying which color you want to
+     * change it to.
+     *
+     * You must return a valid Color value from this method. You must not
+     * return the value Color.NONE under any circumstances.
+     */
+    public Color callColor(List<Card> hand){
+        return calledColor;
+    }
+
 }
