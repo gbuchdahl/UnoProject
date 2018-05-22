@@ -113,6 +113,18 @@ public class BuchdahlG_UnoPlayer implements UnoPlayer {
                 || (!(card.getRank().equals(number)) && card.getRank().equals(upCard.getRank()));
     }
 
+    private boolean canChangeColor(Card upCard, Color calledColor, List<Card> hand){
+        for (Card card : hand){
+            if (card.getRank().equals(wild) || card.getRank().equals(wildDrawFour)){
+                return true;
+            }
+            if (canPlay(card, upCard, calledColor) && !(card.getColor().equals(upCard.getColor()))){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private boolean handContainsValidNumberCard(List<Card> hand, Card upCard, Color calledColor){
         for(Card card: getNumberCards(hand)) {
             if (canPlay(card, upCard, calledColor)) {
